@@ -39,7 +39,7 @@ bool Request::Set_Distance() {
 	}
 }
 
-int Request::Get_Distance() {
+double Request::Get_Distance() {
 	return select_Distance_;
 }
 
@@ -74,17 +74,17 @@ void Request::Print_Distance() {
 void Request::Print_All_Hero() {
 	switch (select_Race_) {
 	case 1:
-		for (auto i : vecHeroGround) {
+		for (std::string i : vecHeroGround) {
 			std::cout << i << std::endl;
 		}
 		break;
 	case 2:
-		for (auto i : vecHeroAir) {
+		for (std::string i : vecHeroAir) {
 			std::cout << i << std::endl;
 		}
 		break;
 	case 3:
-		for (auto i : vecHeroAll) {
+		for (std::string i : vecHeroAll) {
 			std::cout << i << std::endl;
 		}
 		break;
@@ -146,9 +146,9 @@ bool Request::Check_Go_Race_Or_Registr() {
 		return true;
 	}
 }
-void Request::Check_Result_Race(std::vector <Transport*> ref, int dest) {
+void Request::Check_Result_Race(std::vector <Transport*> ref, double distTemp) {
 	for (int i = 0; i != ref.size(); i++) {
-		ref[i]->Go_Race(dest);
+		ref[i]->Go_Race(distTemp);
 	}
 }
 void Request::Print_Result_Race(std::vector <Transport*> ref) {

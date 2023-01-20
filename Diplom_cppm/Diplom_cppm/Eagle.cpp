@@ -16,9 +16,10 @@ std::string Eagle::Get_Name() {
 int Eagle::Get_ID() {
 	return id_;
 }
-int Eagle::Get_Result() {
+double Eagle::Get_Result() {
 	return result_;
 }
-void Eagle::Go_Race(int dest) {
-	this->result_ = dest / speed_;
+void Eagle::Go_Race(double distTemp) {
+	double temp = distTemp * 0.94;
+	result_ = temp / speed_;
 }

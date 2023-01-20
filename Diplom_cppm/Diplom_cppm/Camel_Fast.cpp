@@ -16,9 +16,22 @@ std::string Camel_Fast::Get_Name() {
 int Camel_Fast::Get_ID() {
 	return id_;
 }
-int Camel_Fast::Get_Result() {
+double Camel_Fast::Get_Result() {
 	return result_;
 }
-void Camel_Fast::Go_Race(int dest) {
-	this->result_ = dest / speed_;
+void Camel_Fast::Go_Race(double distTemp) {
+	double temp;
+	result_ = distTemp / speed_;
+	temp = result_ / rest_;
+	for (int i = 1; i < temp; i++) {
+		if (i == 1) {
+			result_ += stop_first_;
+		}
+		if (i == 2) {
+			result_ += stop_second_;
+		}
+		else {
+			result_ += stop_all_;
+		}
+	}
 }

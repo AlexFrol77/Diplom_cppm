@@ -17,7 +17,7 @@ public:
 
 	void Print_Distance();
 	bool Set_Distance();
-	int Get_Distance();
+	double Get_Distance();
 	
 	bool Alert();
 
@@ -30,7 +30,7 @@ public:
 
 	bool Check_Go_Race_Or_Registr();
 
-	void Check_Result_Race(std::vector <Transport*> ref, int dest);
+	void Check_Result_Race(std::vector <Transport*> ref, double distTemp);
 	void Print_Result_Race(std::vector <Transport*> ref);
 
 	bool Check_Replay_Or_Exit();

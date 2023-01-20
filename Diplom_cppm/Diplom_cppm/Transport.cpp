@@ -5,7 +5,7 @@ Transport::Transport() {};
 
 Transport::~Transport() {};
 
-void Transport::Set_Distance(int distance) {
+void Transport::Set_Distance(double distance) {
 	this->distance_ = distance;
 }
 void Transport::Print_Transport_Race() {
@@ -14,13 +14,13 @@ void Transport::Print_Transport_Race() {
 void Transport::Print_Transport_Name() {
 	std::cout << name_ << " ";
 }
-int Transport::Get_Distance() {
+double Transport::Get_Distance() {
 	return distance_;
 }
-int Transport::Get_Speed() {
+double Transport::Get_Speed() {
 	return speed_;
 }
-int Transport::Get_Result() {
+double Transport::Get_Result() {
 	return result_;
 }
 std::string Transport::Get_Name() {
@@ -29,6 +29,6 @@ std::string Transport::Get_Name() {
 int Transport::Get_ID() {
 	return id_;
 }
-void Transport::Go_Race(int dest) {
-	this->result_ = dest / speed_;
+void Transport::Go_Race(double distTemp) {
+	result_ = distTemp / speed_;
 }

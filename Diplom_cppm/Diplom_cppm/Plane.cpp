@@ -16,9 +16,19 @@ std::string Plane::Get_Name() {
 int Plane::Get_ID() {
 	return id_;
 }
-int Plane::Get_Result() {
+double Plane::Get_Result() {
 	return result_;
 }
-void Plane::Go_Race(int dest) {
-	this->result_ = dest / speed_;
+void Plane::Go_Race(double distTemp) {
+	double temp = distTemp;
+	if (distTemp < 5000) {
+		temp *= 0.97;
+	}
+	if (distTemp < 10000 && distTemp > 5000) {
+		temp *= 0.90;
+	}
+	if (distTemp >= 10000) {
+		temp *= 0.95;
+	}
+	result_ = temp / speed_;
 }

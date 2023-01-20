@@ -15,9 +15,14 @@ std::string Kentavr::Get_Name() {
 int Kentavr::Get_ID() {
 	return id_;
 }
-int Kentavr::Get_Result() {
+double Kentavr::Get_Result() {
 	return result_;
 }
-void Kentavr::Go_Race(int dest) {
-	this->result_ = dest / speed_;
+void Kentavr::Go_Race(double distTemp) {
+	double temp;
+	result_ = distTemp / speed_;
+	temp = result_ / rest_;
+	for (int i = 1; i < temp; i++) {		
+		result_ += stop_all_;
+	}
 }
